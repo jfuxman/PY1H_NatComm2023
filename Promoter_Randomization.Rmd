@@ -1,0 +1,150 @@
+---
+title: "Promoter Randomization (Supp. Figure 6 c-e)"
+author: "Luis Soto"
+date: "2023-06-26"
+output: html_document
+---
+
+
+```{r}
+library(stringr)
+library(dplyr)
+library(readxl)
+require('igraph')
+require('reshape2')
+require('ggplot2')
+library(dplyr)
+library(stringr)
+library(writexl)
+#BiocManager::install("TFBSTools")
+library(readxl)
+library(matrixStats)
+library(stringi)
+library(Biostrings)
+library(TFBSTools)
+library(TFMPvalue)
+```
+
+
+```{r}
+y1h_data = read_excel('Final events list 6Feb23.xlsx')
+tfx = c()
+tfy = c()
+for(i in 1:nrow(y1h_data)){
+  tf1 = y1h_data[i, 'TF1'] %>% unlist()
+  tf2 = y1h_data[i, 'TF2'] %>% unlist()
+  if(tf1 < tf2){
+    tfx = c(tfx, tf1)
+    tfy = c(tfy, tf2)
+  } else{
+    tfx = c(tfx, tf2)
+    tfy = c(tfy, tf1)
+  }
+}
+y1h_data$TF1 = tfx
+y1h_data$TF2 = tfy
+y1h_data$name = paste(y1h_data$TF1, '-', y1h_data$TF2, '-', y1h_data$`DNA bait`, sep ='')
+y1h_data$name2 = paste(y1h_data$TF1, '-', y1h_data$TF2, sep ='')
+
+```
+
+```{r}
+head(y1h_data, 10)
+```
+
+```{r}
+
+out_data <- read_xlsx('DF_all_motifs.xlsx')
+out_data$name2 = paste(out_data$TF1, '-', out_data$TF2,sep ='')
+
+```
+
+```{r}
+head(out_data)
+```
+
+
+```{r}
+
+calculate_randomization = function(event_type = 'NA', filter_event = 'NA'){
+  
+  if(filter_event == 'NA'){
+    out_data2 = out_data
+    
+  } else{
+    if(filter_event == 'Ovarlapping_events'){ out_data2 = out_data %>% filter(Overlapping_events > 0)}
+    if(filter_event == 'Times_less_10'){ out_data2 = out_data %>% filter(Times_less_10 > 0)}
+    if(filter_event == 'Both_TFs'){ out_data2 = out_data %>% filter(Times_TF1 > 0 & Times_TF2 > 0)}
+  }
+  
+  
+  if(event_type == 'NA'){
+    
+    test_network = graph_from_data_frame(y1h_data[,c('name2','DNA bait')])
+    
+  } else{
+    
+    if(event_type == 'cooperativity'){test_network = graph_from_data_frame(y1h_data[y1h_data$`event type` == 'cooperativity', c('name2','DNA bait')])}
+    
+    if(event_type == 'antagonism'){test_network = graph_from_data_frame(y1h_data[y1h_data$`event type` != 'cooperativity', c('name2','DNA bait')])}
+    
+  }
+    
+  reference_network = graph_from_data_frame(out_data2[, c('name2', 'Cytokine')])
+
+  ## True = Promoter edges
+  true = as_adjacency_matrix(reference_network,sparse = F)
+  true = melt(true)
+  true = true[true$value==1,]
+  true = paste0(true$Var1,true$Var2)
+  
+  ## Real_result
+  real_info = as_adjacency_matrix(test_network,sparse = F)
+  real_info = melt(real_info)
+  real_info = real_info[real_info$value==1,]
+  real_info = paste0(real_info$Var1,real_info$Var2)
+  print(length(intersect(true, real_info)))
+  
+  
+  numberofedgeswitching = 20000
+  iteration = 10000
+    
+  #numberofedgeswitching = 200
+  #iteration = 100
+  
+  results = c()
+  
+  for (i in 1:iteration) {
+    randomized_network = rewire(test_network, keeping_degseq(niter = numberofedgeswitching))
+    randomized = as_adjacency_matrix(randomized_network,sparse = F)
+    randomized = melt(randomized)
+    randomized = randomized[randomized$value==1,]
+    randomized = paste0(randomized$Var1,randomized$Var2)
+    results = c(results,length(intersect(true,randomized)))
+  }
+  
+  real_number = length(intersect(true, real_info))
+  results = data.frame(overlap=c(results, real_number),identity=c(rep('Randomized',iteration),'True'))
+  mean_results = results %>% filter(identity == 'Randomized') %>% dplyr::select(overlap) %>% unlist() %>% mean()
+  sd_results = results %>% filter(identity == 'Randomized') %>% dplyr::select(overlap) %>% unlist() %>% sd()
+  zscore = (real_number - mean_results)/ sd_results
+  
+  ggplot(results,aes(x=overlap))+
+    geom_histogram(binwidth = 1, color = 'black')+
+    geom_vline(xintercept = results$overlap[results$identity=='True'],colour='red') +
+    theme_bw() + 
+    ggtitle( paste0(filter_event, '-', event_type))
+  
+  #writexl::write_xlsx(results, path = 'Randomization_promoter_analysis.xlsx')
+}
+
+```
+
+```{r}
+calculate_randomization(event_type ='cooperativity', filter_event = 'Both_TFs')
+calculate_randomization(event_type ='antagonism', filter_event = 'Both_TFs')
+calculate_randomization(event_type = 'cooperativity', filter_event = 'Times_less_10')
+
+```
+
+
