@@ -59,8 +59,14 @@ Promoter_Randomization.Rmd: Script to perform randomization and reproduce Supple
 ### Scripts
 CHIP_Randomization_antagonism.Rmd: Script to perform randomization and reproduce Figure 2G; and Supplementary Figure 6F, G
 
+## Network Randomization Analysis (EY1H and PY1H with ChIP data)
+### Scripts
+Reviewers_randomization.Rmd
+
 ## Paralog partner similarity
 
 ### Input files
 
 ### Scripts
+1.Jaccard_Analysis.Rmd
+
