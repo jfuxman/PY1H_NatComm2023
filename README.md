@@ -12,11 +12,10 @@ Possible TF-TF heterodimers were derived from LitBM. Check this [notebook](https
 
 ### Scripts
 1. trimming.sh: Demultiplexing and trimming of Fastq files
-2. BowtieMapping.sh: Indexing and mapping of Fastq files using TF Transcripts as a library
-3. get_enst_biomaRt.R: Get all transcript sequences for expected TFs in PY1H experiment
-4. fromTxttoFasta.py: Converts to fasta file
-5. BowtieMaping.sh: Index library, align FASTQ files, and generates bam files
-6. Get_Significant_Pairs.R: Identify significant alignments and TF-TF pairs
+2. get_enst_biomaRt.R: Get all transcript sequences for expected TFs in PY1H experiment
+3. fromTxttoFasta.py: Converts to fasta file
+4. BowtieMaping.sh: Index library, align FASTQ files, and generates bam files
+5. Get_Significant_Pairs.R: Identify significant alignments and TF-TF pairs
  
 ## Obtaining ChIP-seq data from GTRD
 
