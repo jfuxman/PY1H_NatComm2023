@@ -218,8 +218,8 @@ ggplot(results_py1h,aes(x=overlap))+
 ```
 
 ```{r}
-write_xlsx(results_ey1h, 'D:/Descargas/ey1h_randomization.xlsx')
-write_xlsx(results_py1h, 'D:/Descargas/py1h_randomization.xlsx')
+write_xlsx(results_ey1h, 'ey1h_randomization.xlsx')
+write_xlsx(results_py1h, 'py1h_randomization.xlsx')
 
 
 ```
