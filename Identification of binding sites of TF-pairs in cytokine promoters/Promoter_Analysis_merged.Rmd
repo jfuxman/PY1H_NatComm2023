@@ -1,0 +1,771 @@
+---
+title: "Promoter Analysis"
+author: "-"
+date: "2023-06-26"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(stringr)
+library(writexl)
+#BiocManager::install("TFBSTools")
+library(readxl)
+library(matrixStats)
+library(stringi)
+library(Biostrings)
+library(TFBSTools)
+library(TFMPvalue)
+```
+
+
+```{r}
+# Motif - TF relation table
+
+events_df = read_excel('Final events list 6Feb23.xlsx')
+
+tfs_events = c(events_df$TF1,events_df$TF2) %>% unique()
+
+df1 = read.table('TF_Information.txt',header = T, sep = '\t', fill = T) %>% as_tibble()
+
+# Information content of TFs
+df3 = read.table('Information_content.txt', header = T, sep = '\t', fill = T) %>% as_tibble()
+
+# Useless motifs
+useless_motifs = df3 %>% filter(is.na(start) & is.na(end)) %>% dplyr::select(ID) %>% unlist()
+
+# Useful motifs
+df1 = df1 %>% filter(!Motif_ID %in% useless_motifs)
+
+# Remove empty motifs
+df1 = df1 %>% filter(Motif_ID != '.')
+
+# Remove motifs not beloning to usefuls TFS
+df1 = df1 %>% filter(TF_Name %in% tfs_events)
+```
+
+```{r}
+head(df1)
+```
+
+
+```{r}
+# It merges all significant motifs identified after running TFPM analysis (check TFPM.Rmd)
+
+promoters <- readDNAStringSet("promoters.fasta")
+
+IDs = promoters@ranges@NAMES
+
+sequences = as.data.frame(promoters)
+
+promoters.df = data.frame(ID = IDs, sequence = sequences)
+
+merged.df = data.frame()
+
+for(i in 1:nrow(promoters.df)){
+  id = promoters.df[i,1] %>% unlist()
+  promoter = promoters.df[i,2] %>% unlist()
+  tmp.data.2 = data.frame()
+  for (j in c(1,101,201,301,401,501,601)){
+    file.name = df1[j,'Motif_ID'] %>% unlist()
+    tmp.data = read.table(paste0('TFPM_motifs/all_positions_', i, '_', j, '.txt'))
+    tmp.data$cytokine = id
+    tmp.data = tmp.data[1:100,]
+    tmp.data.2 = rbind(tmp.data.2, tmp.data)
+  }
+  tmp.data.2 = tmp.data.2[1:689,]
+  tmp.data.2$motif = df1$Motif_ID
+  
+  merged.df = rbind(merged.df, tmp.data.2)
+  
+}
+
+sizes = c()
+for(j in 1:nrow(df1)){
+  file.name = df1[j,'Motif_ID'] %>% unlist()
+  
+  # Read matrix
+  tmp.df = read.table(paste0('pwms_all_motifs/', file.name, '.txt'), header = T)
+  
+  # Remove first position column
+  tmp.df = tmp.df %>% dplyr::select(-1) 
+  
+  # Define the PWM matrix
+  pwm_matrix = as.matrix(tmp.df)
+  
+  # Save another matrix to get p-value
+  row_pwm_matrix = t(pwm_matrix)
+  
+  # Remove names
+  dimnames(pwm_matrix) = NULL
+  
+  # Split length
+  length_seq = nrow(tmp.df)
+  sizes = c(sizes, length_seq)
+}
+
+df1$sizes = sizes 
+merged.df$TF = df1$TF_Name[match(merged.df$motif, df1$Motif_ID)]
+merged.df$size = df1$sizes[match(merged.df$motif, df1$Motif_ID)]
+merged.df = merged.df %>% filter(!is.na(all_positions) & all_positions != '')
+```
+
+
+```{r}
+# Dataframe with all significant Motifs found in different positions of cytokine promoters (size: length of each motif)
+head(merged.df, 10)
+```
+
+
+```{r}
+
+all_tfs = merged.df$TF %>% unlist() %>% unique()
+
+cytokines = merged.df$cytokine %>% unlist() %>% unique()
+
+starts = c()
+
+ends = c()
+
+tfs = c()
+
+cytokines.col = c()
+
+for(cyt in cytokines){
+  
+  for(tf in all_tfs){
+    
+    tmp.data = merged.df %>% filter(TF == tf, cytokine == cyt)
+    
+    for(i in 1:nrow(tmp.data)){
+      
+      positions = tmp.data[i, 'all_positions']
+      
+      positions = str_split(positions, ',') %>% unlist()
+      
+      size = tmp.data[i, 'size']
+      
+      for(position in positions){
+        
+        position = as.numeric(position)
+        
+        start = position
+        
+        end = position + size
+        
+        starts = c(starts, start)
+        
+        ends = c(ends, end)
+        
+        tfs = c(tfs, tf)
+        
+        cytokines.col = c(cytokines.col, cyt)
+        
+      }
+    }
+  }
+}
+
+merged.df2 = data.frame(TF = tfs, Cytokine = cytokines.col, Start = starts, End= ends)
+
+merged.df2 = merged.df2 %>% filter(!is.na(Start) & !is.na(End))
+```
+
+
+```{r}
+# Dataframe with all significant separated, one motif per row
+
+head(merged.df2,10)
+```
+
+```{r}
+
+cytokines = merged.df2$Cytokine %>% unique()
+
+all.data2 <- data.frame()
+
+for(cyt in cytokines){
+  
+  tfs <- merged.df2 %>% as.data.frame() %>% filter(Cytokine == cyt) %>% dplyr::select(TF) %>% unique() %>% unlist()
+  
+  for(tf in tfs){
+    
+    prueba = merged.df2 %>% 
+      filter(Cytokine == cyt) %>% 
+      filter(TF == tf) %>% 
+      arrange(Start, End) %>% 
+      dplyr::select(Start, End) %>% 
+      unique()
+    
+    groups = c()
+    
+    x = 1
+    
+    tmp.prueba = prueba %>% as.data.frame()
+    
+    groups = c(groups, x)
+    
+    i = 1
+    
+    if (nrow(tmp.prueba) <= 1){
+      next
+    } else{
+      
+      for(i in 1:(nrow(tmp.prueba)-1) ){
+        
+        starts = c(tmp.prueba[i,'Start'], tmp.prueba[i+1,'Start'])
+        
+        ends = c(tmp.prueba[i,'End'], tmp.prueba[i+1,'End'])
+        
+        start = max(starts)
+        
+        end = min(ends)
+        
+        distance = end - start
+        
+        dist1 = ends[1] - starts[1]
+        
+        dist2 = ends[2] - starts[2]
+        
+        mindist = min(c(dist1,dist2))
+        
+        proportion = distance/ mindist
+        
+        if(proportion >= 0.8){
+          groups = c(groups, x)
+        } else{
+          x = x + 1
+          groups = c(groups, x)
+        }
+      }
+    }
+    
+    prueba$group = groups
+    
+    new.data = data.frame()
+    
+    for(tmp.group in prueba$group %>% unique){
+      tmp.prueba = prueba %>% filter(group == tmp.group)
+      all_numbers = c()
+      
+      for (i in 1:nrow(tmp.prueba)){
+        tmp.seq = seq(tmp.prueba[i,1], tmp.prueba[i,2])
+        all_numbers = c(all_numbers, tmp.seq)
+      }
+      
+      tmp.numbers = all_numbers %>% table() %>% as.data.frame()
+      colnames(tmp.numbers) = c('ID', 'Freq')
+      freq_number = tmp.numbers %>% 
+        group_by(Freq) %>% 
+        summarize(n = n()) %>% 
+        filter(n >= 5) %>% 
+        arrange(desc(Freq)) %>% 
+        head(1) %>% 
+        dplyr::select(Freq) %>% 
+        unlist()
+      
+      frecuencies = tmp.numbers %>% arrange(desc(Freq)) %>% dplyr::select(Freq) %>% unique() %>% unlist() %>% as.character() %>% as.numeric()
+      for ( freq in frecuencies){
+        n_elements = tmp.numbers %>% filter(Freq == freq) %>% nrow()
+        
+        if (n_elements <=4){
+          tmp.numbers$Freq[tmp.numbers$Freq == freq] = freq - 1
+        } else {
+          new.min = tmp.numbers %>% filter(Freq == freq) %>% dplyr::select(ID) %>% unlist() %>% as.character() %>% as.numeric() %>% min()
+          new.max = tmp.numbers %>% filter(Freq == freq) %>% dplyr::select(ID) %>% unlist() %>% as.character() %>% as.numeric() %>% max()
+          break
+        }
+      }
+      new.data = rbind(new.data, data.frame(new.start = new.min, new.end = new.max))
+      
+    }
+    new.data$TF = tf
+    new.data$cytokine = cyt
+    all.data2 = rbind(all.data2, new.data)
+  }
+}
+```
+
+```{r}
+## Dataframe with motifs merged if they are overlapping
+head(all.data2, 10)
+```
+
+
+
+```{r}
+
+# Make final table of promoter analysis
+
+promoter_data = all.data2 
+
+promoter_data$cytokine = as.numeric(promoter_data$cytokine)
+
+cytokines = promoter_data$cytokine %>% unique()
+
+info = c()
+
+q1 = c()
+
+q2 = c()
+
+q3 = c()
+
+q4 = c()
+
+q5 = c()
+
+coltf1 = c()
+
+coltf2 = c()
+
+colcytokine = c()
+
+tfs = c(events_df$TF1, events_df$TF2) %>% unique() %>% unlist()
+
+for(Cytokine in cytokines){
+  
+  tmp.data = promoter_data %>% filter(cytokine == Cytokine)
+  
+  tfs = tmp.data$TF %>% unique()
+  
+  for(i1 in 1:length(tfs)){
+    
+    tf1 = tfs[i1]
+    
+    subdf1 = tmp.data %>% filter(TF == tf1)
+    
+    n_tf1 = nrow(subdf1)
+    
+    for(i2 in i1:length(tfs)){
+      
+      tf2 = tfs[i2] 
+      
+      if(tf1 == tf2){next}
+      
+      subdf2 = tmp.data %>% filter(TF == tf2)
+      
+      n_tf2 = nrow(subdf2)
+      
+      if(nrow(subdf1)==0 | nrow(subdf2) == 0){
+        
+        q1 = c(q1, n_tf1)
+        
+        q2 = c(q2, n_tf2)
+        
+        q3 = c(q3, NA)
+        
+        q4 = c(q4, NA)
+        
+        q5 = c(q5, NA)
+        
+        coltf1 = c(coltf1, tf1)
+        
+        coltf2 = c(coltf2, tf2)
+        
+        colcytokine = c(colcytokine, Cytokine)
+        
+        next
+      }
+      
+      names1 = c()
+      
+      names2 = c()
+      
+      intersected = c()
+      
+      distances = c()
+      
+      j = 1
+      
+      for(j in 1:nrow(subdf1)){
+        
+        start1 = subdf1[j,1] %>% unlist()
+        
+        end1 = subdf1[j,2] %>% unlist()
+        
+        name1 = paste0(start1, '-', end1)
+        
+        for(k in 1:nrow(subdf2)){
+          
+          start2 = subdf2[k,1] %>% unlist()
+          
+          end2 = subdf2[k,2] %>% unlist()
+          
+          name2 = paste0(start2, '-', end2)
+          
+          names1 = c(names1, name1)
+          
+          names2 = c(names2, name2)
+          
+          # If there is intersection
+          
+          numbers_1 = seq(start1, end1)
+          
+          numbers_2 = seq(start2, end2)
+          
+          intersect_numbers = intersect(numbers_1, numbers_2)
+          
+          if (! is.null(intersect_numbers) &  length(intersect_numbers)>0) {
+            
+            intersected = c(intersected, 'Yes')
+            
+            distances = c(distances, 0)
+          } else{
+            
+            intersected = c(intersected, 'No')
+            
+            distances = c(distances, min(abs(start1-end2), abs(start2-end1)))
+            
+          }
+          
+        }
+        
+      }
+      
+      tmp.df = data.frame(names1, names2, intersected, distances)
+      
+      n_overlap_events = tmp.df %>% filter(intersected == 'Yes') %>% unique() %>% nrow()  
+      
+      if( (tmp.df %>% filter(intersected == 'No') %>% nrow()) == 0){
+        shortest_distance = 0
+      } else{
+        shortest_distance = tmp.df %>% filter(intersected == 'No') %>% dplyr::select(distances) %>% unlist() %>% min()
+      }
+      
+      n_distances_ten = tmp.df %>% filter(distances<10) %>% nrow()
+      
+      q1 = c(q1, n_tf1)
+      
+      q2 = c(q2, n_tf2)
+      
+      q3 = c(q3, shortest_distance)
+      
+      q4 = c(q4, n_overlap_events)
+      
+      q5 = c(q5, n_distances_ten)
+      
+      coltf1 = c(coltf1, tf1)
+      
+      coltf2 = c(coltf2, tf2)
+      
+      colcytokine = c(colcytokine, Cytokine)
+      
+    }
+  }
+  
+}
+
+out_data = data.frame(coltf1, coltf2, colcytokine, q1, q2, q3, q4, q5)
+
+colnames(out_data) = c('TF1', 'TF2', 'Cytokine', 'Times_TF1', 'Times_TF2', 'Shortest_distance', 'Overlapping_events', 'Times_less_10')
+
+tfx = c()
+
+tfy = c()
+
+for(i in 1:nrow(out_data)){
+  
+  tf1 = out_data[i, 'TF1']
+  
+  tf2 = out_data[i, 'TF2']
+  
+  if(tf1 < tf2){
+    
+    tfx = c(tfx, tf1)
+    
+    tfy = c(tfy, tf2)
+  } else{
+    
+    tfx = c(tfx, tf2)
+    
+    tfy = c(tfy, tf1)
+  }
+}
+
+out_data$TF1 = tfx
+
+out_data$TF2 = tfy
+
+out_data$Name = paste(out_data$TF1, '-', out_data$TF2, '-', out_data$Cytokine, sep ='')
+
+tfx = c()
+
+tfy = c()
+
+for(i in 1:nrow(events_df)){
+  
+  tf1 = events_df[i, 'TF1'] %>% unlist()
+  
+  tf2 = events_df[i, 'TF2'] %>% unlist()
+  
+  if(tf1 < tf2){
+    
+    tfx = c(tfx, tf1)
+    
+    tfy = c(tfy, tf2)
+  } else{
+    
+    tfx = c(tfx, tf2)
+    
+    tfy = c(tfy, tf1)
+  }
+  
+}
+
+events_df$TF1 = tfx
+
+events_df$TF2 = tfy
+
+events_df$name = paste(events_df$TF1, '-', events_df$TF2, '-', events_df$`DNA bait`, sep ='')
+
+```
+
+```{r}
+out_data %>% filter(Name %in% events_df$name) %>% head(10)
+```
+
+
+```{r}
+
+write_xlsx(out_data %>% filter(Name %in% events_df$name), 'motifs_results_merged_motifs.xlsx')
+
+write_xlsx(out_data, 'motifs_results_merged_motifs_everything.xlsx')
+
+```
+
+
+```{r}
+# For randomization analysis we considered all motifs:
+
+promoter_data = merged.df2
+colnames(promoter_data) = c('TF', 'cytokine', 'new.start', 'new.end')
+promoter_data = promoter_data[,c(3,4,1,2)]
+
+promoter_data$cytokine = as.numeric(promoter_data$cytokine)
+
+cytokines = promoter_data$cytokine %>% unique()
+
+info = c()
+
+q1 = c()
+
+q2 = c()
+
+q3 = c()
+
+q4 = c()
+
+q5 = c()
+
+coltf1 = c()
+
+coltf2 = c()
+
+colcytokine = c()
+
+tfs = c(events_df$TF1, events_df$TF2) %>% unique() %>% unlist()
+
+for(Cytokine in cytokines){
+  
+  tmp.data = promoter_data %>% filter(cytokine == Cytokine)
+  
+  tfs = tmp.data$TF %>% unique()
+  
+  for(i1 in 1:length(tfs)){
+    
+    tf1 = tfs[i1]
+    
+    subdf1 = tmp.data %>% filter(TF == tf1)
+    
+    n_tf1 = nrow(subdf1)
+    
+    for(i2 in i1:length(tfs)){
+      
+      tf2 = tfs[i2] 
+      
+      if(tf1 == tf2){next}
+      
+      subdf2 = tmp.data %>% filter(TF == tf2)
+      
+      n_tf2 = nrow(subdf2)
+      
+      if(nrow(subdf1)==0 | nrow(subdf2) == 0){
+        
+        q1 = c(q1, n_tf1)
+        
+        q2 = c(q2, n_tf2)
+        
+        q3 = c(q3, NA)
+        
+        q4 = c(q4, NA)
+        
+        q5 = c(q5, NA)
+        
+        coltf1 = c(coltf1, tf1)
+        
+        coltf2 = c(coltf2, tf2)
+        
+        colcytokine = c(colcytokine, Cytokine)
+        
+        next
+      }
+      
+      names1 = c()
+      
+      names2 = c()
+      
+      intersected = c()
+      
+      distances = c()
+      
+      j = 1
+      
+      for(j in 1:nrow(subdf1)){
+        
+        start1 = subdf1[j,1] %>% unlist()
+        
+        end1 = subdf1[j,2] %>% unlist()
+        
+        name1 = paste0(start1, '-', end1)
+        
+        for(k in 1:nrow(subdf2)){
+          
+          start2 = subdf2[k,1] %>% unlist()
+          
+          end2 = subdf2[k,2] %>% unlist()
+          
+          name2 = paste0(start2, '-', end2)
+          
+          names1 = c(names1, name1)
+          
+          names2 = c(names2, name2)
+          
+          # If there is intersection
+          
+          numbers_1 = seq(start1, end1)
+          
+          numbers_2 = seq(start2, end2)
+          
+          intersect_numbers = intersect(numbers_1, numbers_2)
+          
+          if (! is.null(intersect_numbers) &  length(intersect_numbers)>0) {
+            
+            intersected = c(intersected, 'Yes')
+            
+            distances = c(distances, 0)
+          } else{
+            
+            intersected = c(intersected, 'No')
+            
+            distances = c(distances, min(abs(start1-end2), abs(start2-end1)))
+            
+          }
+          
+        }
+        
+      }
+      
+      tmp.df = data.frame(names1, names2, intersected, distances)
+      
+      n_overlap_events = tmp.df %>% filter(intersected == 'Yes') %>% unique() %>% nrow()  
+      
+      if( (tmp.df %>% filter(intersected == 'No') %>% nrow()) == 0){
+        shortest_distance = 0
+      } else{
+        shortest_distance = tmp.df %>% filter(intersected == 'No') %>% dplyr::select(distances) %>% unlist() %>% min()
+      }
+      
+      n_distances_ten = tmp.df %>% filter(distances<10) %>% nrow()
+      
+      q1 = c(q1, n_tf1)
+      
+      q2 = c(q2, n_tf2)
+      
+      q3 = c(q3, shortest_distance)
+      
+      q4 = c(q4, n_overlap_events)
+      
+      q5 = c(q5, n_distances_ten)
+      
+      coltf1 = c(coltf1, tf1)
+      
+      coltf2 = c(coltf2, tf2)
+      
+      colcytokine = c(colcytokine, Cytokine)
+      
+    }
+  }
+  
+}
+
+out_data = data.frame(coltf1, coltf2, colcytokine, q1, q2, q3, q4, q5)
+
+colnames(out_data) = c('TF1', 'TF2', 'Cytokine', 'Times_TF1', 'Times_TF2', 'Shortest_distance', 'Overlapping_events', 'Times_less_10')
+
+tfx = c()
+
+tfy = c()
+
+for(i in 1:nrow(out_data)){
+  
+  tf1 = out_data[i, 'TF1']
+  
+  tf2 = out_data[i, 'TF2']
+  
+  if(tf1 < tf2){
+    
+    tfx = c(tfx, tf1)
+    
+    tfy = c(tfy, tf2)
+  } else{
+    
+    tfx = c(tfx, tf2)
+    
+    tfy = c(tfy, tf1)
+  }
+}
+
+out_data$TF1 = tfx
+
+out_data$TF2 = tfy
+
+out_data$Name = paste(out_data$TF1, '-', out_data$TF2, '-', out_data$Cytokine, sep ='')
+
+tfx = c()
+
+tfy = c()
+
+for(i in 1:nrow(events_df)){
+  
+  tf1 = events_df[i, 'TF1'] %>% unlist()
+  
+  tf2 = events_df[i, 'TF2'] %>% unlist()
+  
+  if(tf1 < tf2){
+    
+    tfx = c(tfx, tf1)
+    
+    tfy = c(tfy, tf2)
+  } else{
+    
+    tfx = c(tfx, tf2)
+    
+    tfy = c(tfy, tf1)
+  }
+  
+}
+
+events_df$TF1 = tfx
+
+events_df$TF2 = tfy
+
+events_df$name = paste(events_df$TF1, '-', events_df$TF2, '-', events_df$`DNA bait`, sep ='')
+
+```
+
+```{r}
+write_xlsx(out_data, 'DF_all_motifs.xlsx')
+
+```
+
