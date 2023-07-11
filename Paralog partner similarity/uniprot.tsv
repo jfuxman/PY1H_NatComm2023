@@ -1,0 +1,177 @@
+From	Entry	Reviewed	Entry Name	Protein names	Gene Names	Organism	Length
+HIF1A	Q16665	reviewed	HIF1A_HUMAN	Hypoxia-inducible factor 1-alpha (HIF-1-alpha) (HIF1-alpha) (ARNT-interacting protein) (Basic-helix-loop-helix-PAS protein MOP1) (Class E basic helix-loop-helix protein 78) (bHLHe78) (Member of PAS protein 1) (PAS domain-containing protein 8)	HIF1A BHLHE78 MOP1 PASD8	Homo sapiens (Human)	826
+NCOA1	Q15788	reviewed	NCOA1_HUMAN	Nuclear receptor coactivator 1 (NCoA-1) (EC 2.3.1.48) (Class E basic helix-loop-helix protein 74) (bHLHe74) (Protein Hin-2) (RIP160) (Renal carcinoma antigen NY-REN-52) (Steroid receptor coactivator 1) (SRC-1)	NCOA1 BHLHE74 SRC1	Homo sapiens (Human)	1441
+MAX	P61244	reviewed	MAX_HUMAN	Protein max (Class D basic helix-loop-helix protein 4) (bHLHd4) (Myc-associated factor X)	MAX BHLHD4	Homo sapiens (Human)	160
+ARNTL2	Q8WYA1	reviewed	BMAL2_HUMAN	Basic helix-loop-helix ARNT-like protein 2 (Aryl hydrocarbon receptor nuclear translocator-like protein 2) (Basic-helix-loop-helix-PAS protein MOP9) (Brain and muscle ARNT-like 2) (CYCLE-like factor) (CLIF) (Class E basic helix-loop-helix protein 6) (bHLHe6) (Member of PAS protein 9) (PAS domain-containing protein 9)	BMAL2 ARNTL2 BHLHE6 CLIF MOP9 PASD9	Homo sapiens (Human)	636
+MLX	Q9UH92	reviewed	MLX_HUMAN	Max-like protein X (Class D basic helix-loop-helix protein 13) (bHLHd13) (Max-like bHLHZip protein) (Protein BigMax) (Transcription factor-like protein 4)	MLX BHLHD13 TCFL4	Homo sapiens (Human)	298
+MYC	P01106	reviewed	MYC_HUMAN	Myc proto-oncogene protein (Class E basic helix-loop-helix protein 39) (bHLHe39) (Proto-oncogene c-Myc) (Transcription factor p64)	MYC BHLHE39	Homo sapiens (Human)	439
+ARNTL	O00327	reviewed	BMAL1_HUMAN	Basic helix-loop-helix ARNT-like protein 1 (Aryl hydrocarbon receptor nuclear translocator-like protein 1) (Basic-helix-loop-helix-PAS protein MOP3) (Brain and muscle ARNT-like 1) (Class E basic helix-loop-helix protein 5) (bHLHe5) (Member of PAS protein 3) (PAS domain-containing protein 3) (bHLH-PAS protein JAP3)	BMAL1 ARNTL BHLHE5 MOP3 PASD3	Homo sapiens (Human)	626
+ARNT	P27540	reviewed	ARNT_HUMAN	Aryl hydrocarbon receptor nuclear translocator (ARNT protein) (Class E basic helix-loop-helix protein 2) (bHLHe2) (Dioxin receptor, nuclear translocator) (Hypoxia-inducible factor 1-beta) (HIF-1-beta) (HIF1-beta)	ARNT BHLHE2	Homo sapiens (Human)	789
+TWIST2	Q8WVJ9	reviewed	TWST2_HUMAN	Twist-related protein 2 (Class A basic helix-loop-helix protein 39) (bHLHa39) (Dermis-expressed protein 1) (Dermo-1)	TWIST2 BHLHA39 DERMO1	Homo sapiens (Human)	160
+MNT	Q99583	reviewed	MNT_HUMAN	Max-binding protein MNT (Class D basic helix-loop-helix protein 3) (bHLHd3) (Myc antagonist MNT) (Protein ROX)	MNT BHLHD3 ROX	Homo sapiens (Human)	582
+MXD3	Q9BW11	reviewed	MAD3_HUMAN	Max dimerization protein 3 (Max dimerizer 3) (Class C basic helix-loop-helix protein 13) (bHLHc13) (Max-associated protein 3) (Max-interacting transcriptional repressor MAD3) (Myx)	MXD3 BHLHC13 MAD3	Homo sapiens (Human)	206
+MYCN	P04198	reviewed	MYCN_HUMAN	N-myc proto-oncogene protein (Class E basic helix-loop-helix protein 37) (bHLHe37)	MYCN BHLHE37 NMYC	Homo sapiens (Human)	464
+NCOA3	Q9Y6Q9	reviewed	NCOA3_HUMAN	Nuclear receptor coactivator 3 (NCoA-3) (EC 2.3.1.48) (ACTR) (Amplified in breast cancer 1 protein) (AIB-1) (CBP-interacting protein) (pCIP) (Class E basic helix-loop-helix protein 42) (bHLHe42) (Receptor-associated coactivator 3) (RAC-3) (Steroid receptor coactivator protein 3) (SRC-3) (Thyroid hormone receptor activator molecule 1) (TRAM-1)	NCOA3 AIB1 BHLHE42 RAC3 TRAM1	Homo sapiens (Human)	1424
+MXD1	Q05195	reviewed	MAD1_HUMAN	Max dimerization protein 1 (Max dimerizer 1) (Protein MAD)	MXD1 MAD	Homo sapiens (Human)	221
+MXI1	P50539	reviewed	MXI1_HUMAN	Max-interacting protein 1 (Max interactor 1) (Class C basic helix-loop-helix protein 11) (bHLHc11)	MXI1 BHLHC11	Homo sapiens (Human)	228
+USF1	P22415	reviewed	USF1_HUMAN	Upstream stimulatory factor 1 (Class B basic helix-loop-helix protein 11) (bHLHb11) (Major late transcription factor 1)	USF1 BHLHB11 USF	Homo sapiens (Human)	310
+MXD4	Q14582	reviewed	MAD4_HUMAN	Max dimerization protein 4 (Max dimerizer 4) (Class C basic helix-loop-helix protein 12) (bHLHc12) (Max-associated protein 4) (Max-interacting transcriptional repressor MAD4)	MXD4 BHLHC12 MAD4	Homo sapiens (Human)	209
+MLXIPL	Q9NP71	reviewed	MLXPL_HUMAN	Carbohydrate-responsive element-binding protein (ChREBP) (Class D basic helix-loop-helix protein 14) (bHLHd14) (MLX interactor) (MLX-interacting protein-like) (WS basic-helix-loop-helix leucine zipper protein) (WS-bHLH) (Williams-Beuren syndrome chromosomal region 14 protein)	MLXIPL BHLHD14 MIO WBSCR14	Homo sapiens (Human)	852
+MLXIP	Q9HAP2	reviewed	MLXIP_HUMAN	MLX-interacting protein (Class E basic helix-loop-helix protein 36) (bHLHe36) (Transcriptional activator MondoA)	MLXIP BHLHE36 KIAA0867 MIR MONDOA	Homo sapiens (Human)	919
+MYOG	P15173	reviewed	MYOG_HUMAN	Myogenin (Class C basic helix-loop-helix protein 3) (bHLHc3) (Myogenic factor 4) (Myf-4)	MYOG BHLHC3 MYF4	Homo sapiens (Human)	224
+CLOCK	O15516	reviewed	CLOCK_HUMAN	Circadian locomoter output cycles protein kaput (hCLOCK) (EC 2.3.1.48) (Class E basic helix-loop-helix protein 8) (bHLHe8)	CLOCK BHLHE8 KIAA0334	Homo sapiens (Human)	846
+SIM1	P81133	reviewed	SIM1_HUMAN	Single-minded homolog 1 (Class E basic helix-loop-helix protein 14) (bHLHe14)	SIM1 BHLHE14	Homo sapiens (Human)	766
+SIM2	Q14190	reviewed	SIM2_HUMAN	Single-minded homolog 2 (Class E basic helix-loop-helix protein 15) (bHLHe15)	SIM2 BHLHE15	Homo sapiens (Human)	667
+ATF3	P18847	reviewed	ATF3_HUMAN	Cyclic AMP-dependent transcription factor ATF-3 (cAMP-dependent transcription factor ATF-3) (Activating transcription factor 3)	ATF3	Homo sapiens (Human)	181
+JUNB	P17275	reviewed	JUNB_HUMAN	Transcription factor JunB (Transcription factor AP-1 subunit JunB)	JUNB	Homo sapiens (Human)	347
+ATF4	P18848	reviewed	ATF4_HUMAN	Cyclic AMP-dependent transcription factor ATF-4 (cAMP-dependent transcription factor ATF-4) (Activating transcription factor 4) (Cyclic AMP-responsive element-binding protein 2) (CREB-2) (cAMP-responsive element-binding protein 2) (Tax-responsive enhancer element-binding protein 67) (TaxREB67)	ATF4 CREB2 TXREB	Homo sapiens (Human)	351
+ATF2	P15336	reviewed	ATF2_HUMAN	Cyclic AMP-dependent transcription factor ATF-2 (cAMP-dependent transcription factor ATF-2) (Activating transcription factor 2) (Cyclic AMP-responsive element-binding protein 2) (CREB-2) (cAMP-responsive element-binding protein 2) (HB16) (cAMP response element-binding protein CRE-BP1)	ATF2 CREB2 CREBP1	Homo sapiens (Human)	505
+BATF3	Q9NR55	reviewed	BATF3_HUMAN	Basic leucine zipper transcriptional factor ATF-like 3 (B-ATF-3) (21 kDa small nuclear factor isolated from T-cells) (Jun dimerization protein p21SNFT)	BATF3 SNFT	Homo sapiens (Human)	127
+CEBPG	P53567	reviewed	CEBPG_HUMAN	CCAAT/enhancer-binding protein gamma (C/EBP gamma)	CEBPG	Homo sapiens (Human)	150
+BATF	Q16520	reviewed	BATF_HUMAN	Basic leucine zipper transcriptional factor ATF-like (B-cell-activating transcription factor) (B-ATF) (SF-HT-activated gene 2 protein) (SFA-2)	BATF	Homo sapiens (Human)	125
+CREB3	O43889	reviewed	CREB3_HUMAN	Cyclic AMP-responsive element-binding protein 3 (CREB-3) (cAMP-responsive element-binding protein 3) (Leucine zipper protein) (Luman) (Transcription factor LZIP-alpha) [Cleaved into: Processed cyclic AMP-responsive element-binding protein 3 (N-terminal Luman) (Transcriptionally active form)]	CREB3 LZIP	Homo sapiens (Human)	371
+FOS	P01100	reviewed	FOS_HUMAN	Protein c-Fos (Cellular oncogene fos) (Fos proto-oncogene, AP-1 transcription factor subunit) (G0/G1 switch regulatory protein 7) (Proto-oncogene c-Fos) (Transcription factor AP-1 subunit c-Fos)	FOS G0S7	Homo sapiens (Human)	380
+FOSL1	P15407	reviewed	FOSL1_HUMAN	Fos-related antigen 1 (FRA-1)	FOSL1 FRA1	Homo sapiens (Human)	271
+MAFK	O60675	reviewed	MAFK_HUMAN	Transcription factor MafK (Erythroid transcription factor NF-E2 p18 subunit)	MAFK	Homo sapiens (Human)	156
+ATF6	P18850	reviewed	ATF6A_HUMAN	Cyclic AMP-dependent transcription factor ATF-6 alpha (cAMP-dependent transcription factor ATF-6 alpha) (Activating transcription factor 6 alpha) (ATF6-alpha) [Cleaved into: Processed cyclic AMP-dependent transcription factor ATF-6 alpha]	ATF6	Homo sapiens (Human)	670
+DDIT3	P0DPQ6	reviewed	DT3UO_HUMAN	DDIT3 upstream open reading frame protein (Alternative DDIT3 protein) (AltDDIT3)	DDIT3	Homo sapiens (Human)	34
+DDIT3	P35638	reviewed	DDIT3_HUMAN	DNA damage-inducible transcript 3 protein (DDIT-3) (C/EBP zeta) (C/EBP-homologous protein) (CHOP) (C/EBP-homologous protein 10) (CHOP-10) (CCAAT/enhancer-binding protein homologous protein) (Growth arrest and DNA damage-inducible protein GADD153)	DDIT3 CHOP CHOP10 GADD153	Homo sapiens (Human)	169
+FOSL2	P15408	reviewed	FOSL2_HUMAN	Fos-related antigen 2 (FRA-2)	FOSL2 FRA2	Homo sapiens (Human)	326
+FOSB	P53539	reviewed	FOSB_HUMAN	Protein FosB (FosB proto-oncogene, AP-1 transcription factor subunit) (G0/G1 switch regulatory protein 3) (Transcription factor AP-1 subunit FosB)	FOSB G0S3	Homo sapiens (Human)	338
+JUN	P05412	reviewed	JUN_HUMAN	Transcription factor Jun (Activator protein 1) (AP1) (Proto-oncogene c-Jun) (Transcription factor AP-1 subunit Jun) (V-jun avian sarcoma virus 17 oncogene homolog) (p39)	JUN	Homo sapiens (Human)	331
+MAFG	O15525	reviewed	MAFG_HUMAN	Transcription factor MafG (V-maf musculoaponeurotic fibrosarcoma oncogene homolog G) (hMAF)	MAFG	Homo sapiens (Human)	162
+MAFF	Q9ULX9	reviewed	MAFF_HUMAN	Transcription factor MafF (U-Maf) (V-maf musculoaponeurotic fibrosarcoma oncogene homolog F)	MAFF	Homo sapiens (Human)	164
+NFE2L2	Q16236	reviewed	NF2L2_HUMAN	Nuclear factor erythroid 2-related factor 2 (NF-E2-related factor 2) (NFE2-related factor 2) (Nrf-2) (HEBP1) (Nuclear factor, erythroid derived 2, like 2)	NFE2L2 NRF2	Homo sapiens (Human)	605
+MAF	O75444	reviewed	MAF_HUMAN	Transcription factor Maf (Proto-oncogene c-Maf) (V-maf musculoaponeurotic fibrosarcoma oncogene homolog)	MAF	Homo sapiens (Human)	373
+NFE2L1	Q14494	reviewed	NF2L1_HUMAN	Endoplasmic reticulum membrane sensor NFE2L1 (Locus control region-factor 1) (LCR-F1) (Nuclear factor erythroid 2-related factor 1) (NF-E2-related factor 1) (NFE2-related factor 1) (Nuclear factor, erythroid derived 2, like 1) (Protein NRF1, p120 form) (Transcription factor 11) (TCF-11) [Cleaved into: Transcription factor NRF1 (Protein NRF1, p110 form)]	NFE2L1 HBZ17 NRF1 TCF11	Homo sapiens (Human)	772
+IKZF3	Q9UKT9	reviewed	IKZF3_HUMAN	Zinc finger protein Aiolos (Ikaros family zinc finger protein 3)	IKZF3 ZNFN1A3	Homo sapiens (Human)	509
+HINFP	Q9BQA5	reviewed	HINFP_HUMAN	Histone H4 transcription factor (Histone nuclear factor P) (HiNF-P) (MBD2-interacting zinc finger protein) (Methyl-CpG-binding protein 2-interacting zinc finger protein)	HINFP MIZF ZNF743	Homo sapiens (Human)	517
+GLI3	P10071	reviewed	GLI3_HUMAN	Transcriptional activator GLI3 (GLI3 form of 190 kDa) (GLI3-190) (GLI3 full-length protein) (GLI3FL) [Cleaved into: Transcriptional repressor GLI3R (GLI3 C-terminally truncated form) (GLI3 form of 83 kDa) (GLI3-83)]	GLI3	Homo sapiens (Human)	1580
+ZNF24	P17028	reviewed	ZNF24_HUMAN	Zinc finger protein 24 (Retinoic acid suppression protein A) (RSG-A) (Zinc finger and SCAN domain-containing protein 3) (Zinc finger protein 191) (Zinc finger protein KOX17)	ZNF24 KOX17 ZNF191 ZSCAN3	Homo sapiens (Human)	368
+ZSCAN21	Q9Y5A6	reviewed	ZSC21_HUMAN	Zinc finger and SCAN domain-containing protein 21 (Renal carcinoma antigen NY-REN-21) (Zinc finger protein 38 homolog) (Zfp-38)	ZSCAN21 ZFP38 ZNF38	Homo sapiens (Human)	473
+MECOM	Q03112	reviewed	MECOM_HUMAN	Histone-lysine N-methyltransferase MECOM (EC 2.1.1.367) (Ecotropic virus integration site 1 protein homolog) (EVI-1) (MDS1 and EVI1 complex locus protein) (Myelodysplasia syndrome 1 protein) (Myelodysplasia syndrome-associated protein 1)	MECOM EVI1 MDS1 PRDM3	Homo sapiens (Human)	1230
+ZBTB16	Q05516	reviewed	ZBT16_HUMAN	Zinc finger and BTB domain-containing protein 16 (Promyelocytic leukemia zinc finger protein) (Zinc finger protein 145) (Zinc finger protein PLZF)	ZBTB16 PLZF ZNF145	Homo sapiens (Human)	673
+ZBTB32	Q9Y2Y4	reviewed	ZBT32_HUMAN	Zinc finger and BTB domain-containing protein 32 (FANCC-interacting protein) (Fanconi anemia zinc finger protein) (Testis zinc finger protein) (Zinc finger protein 538)	ZBTB32 FAZF TZFP ZNF538	Homo sapiens (Human)	487
+KLF6	Q99612	reviewed	KLF6_HUMAN	Krueppel-like factor 6 (B-cell-derived protein 1) (Core promoter element-binding protein) (GC-rich sites-binding factor GBF) (Proto-oncogene BCD1) (Suppressor of tumorigenicity 12 protein) (Transcription factor Zf9)	KLF6 BCD1 COPEB CPBP ST12	Homo sapiens (Human)	283
+EGR1	P18146	reviewed	EGR1_HUMAN	Early growth response protein 1 (EGR-1) (AT225) (Nerve growth factor-induced protein A) (NGFI-A) (Transcription factor ETR103) (Transcription factor Zif268) (Zinc finger protein 225) (Zinc finger protein Krox-24)	EGR1 KROX24 ZNF225	Homo sapiens (Human)	543
+ZNF174	Q15697	reviewed	ZN174_HUMAN	Zinc finger protein 174 (AW-1) (Zinc finger and SCAN domain-containing protein 8)	ZNF174 ZSCAN8	Homo sapiens (Human)	407
+KLF5	Q13887	reviewed	KLF5_HUMAN	Krueppel-like factor 5 (Basic transcription element-binding protein 2) (BTE-binding protein 2) (Colon krueppel-like factor) (GC-box-binding protein 2) (Intestinal-enriched krueppel-like factor) (Transcription factor BTEB2)	KLF5 BTEB2 CKLF IKLF	Homo sapiens (Human)	457
+YY1	P25490	reviewed	TYY1_HUMAN	Transcriptional repressor protein YY1 (Delta transcription factor) (INO80 complex subunit S) (NF-E1) (Yin and yang 1) (YY-1)	YY1 INO80S	Homo sapiens (Human)	414
+IKZF4	Q9H2S9	reviewed	IKZF4_HUMAN	Zinc finger protein Eos (Ikaros family zinc finger protein 4)	IKZF4 KIAA1782 ZNFN1A4	Homo sapiens (Human)	585
+ZBTB49	Q6ZSB9	reviewed	ZBT49_HUMAN	Zinc finger and BTB domain-containing protein 49 (Zinc finger protein 509)	ZBTB49 ZNF509	Homo sapiens (Human)	765
+ZNF446	Q9NWS9	reviewed	ZN446_HUMAN	Zinc finger protein 446 (Zinc finger protein with KRAB and SCAN domains 20)	ZNF446 ZKSCAN20	Homo sapiens (Human)	450
+ZSCAN32	Q9NX65	reviewed	ZSC32_HUMAN	Zinc finger and SCAN domain-containing protein 32 (Human cervical cancer suppressor gene 5 protein) (HCCS-5) (Zinc finger protein 434)	ZSCAN32 ZNF434 HCCS5	Homo sapiens (Human)	697
+ZFP91	Q96JP5	reviewed	ZFP91_HUMAN	E3 ubiquitin-protein ligase ZFP91 (EC 2.3.2.27) (RING-type E3 ubiquitin transferase ZFP91) (Zinc finger protein 757) (Zinc finger protein 91 homolog) (Zfp-91)	ZFP91 ZNF757 FKSG11	Homo sapiens (Human)	570
+ZFP90	Q8TF47	reviewed	ZFP90_HUMAN	Zinc finger protein 90 homolog (Zfp-90) (Zinc finger protein 756)	ZFP90 KIAA1954 ZNF756	Homo sapiens (Human)	636
+ZFPM2	Q8WW38	reviewed	FOG2_HUMAN	Zinc finger protein ZFPM2 (Friend of GATA protein 2) (FOG-2) (Friend of GATA 2) (hFOG-2) (Zinc finger protein 89B) (Zinc finger protein multitype 2)	ZFPM2 FOG2 ZNF89B	Homo sapiens (Human)	1151
+ZNF281	Q9Y2X9	reviewed	ZN281_HUMAN	Zinc finger protein 281 (GC-box-binding zinc finger protein 1) (Transcription factor ZBP-99) (Zinc finger DNA-binding protein 99)	ZNF281 GZP1 ZBP99	Homo sapiens (Human)	895
+IKZF5	Q9H5V7	reviewed	IKZF5_HUMAN	Zinc finger protein Pegasus (Ikaros family zinc finger protein 5)	IKZF5 ZNFN1A5	Homo sapiens (Human)	419
+MAZ	P56270	reviewed	MAZ_HUMAN	Myc-associated zinc finger protein (MAZI) (Pur-1) (Purine-binding transcription factor) (Serum amyloid A-activating factor-1) (SAF-1) (Transcription factor Zif87) (ZF87) (Zinc finger protein 801)	MAZ ZNF801	Homo sapiens (Human)	477
+ZNF121	P58317	reviewed	ZN121_HUMAN	Zinc finger protein 121 (Zinc finger protein 20)	ZNF121 ZNF20	Homo sapiens (Human)	390
+ZNF133	P52736	reviewed	ZN133_HUMAN	Zinc finger protein 133 (Zinc finger protein 150)	ZNF133 ZNF150	Homo sapiens (Human)	654
+E2F6	O75461	reviewed	E2F6_HUMAN	Transcription factor E2F6 (E2F-6)	E2F6	Homo sapiens (Human)	281
+TFDP2	Q14188	reviewed	TFDP2_HUMAN	Transcription factor Dp-2 (E2F dimerization partner 2)	TFDP2 DP2	Homo sapiens (Human)	446
+TFDP1	Q14186	reviewed	TFDP1_HUMAN	Transcription factor Dp-1 (DRTF1-polypeptide 1) (DRTF1) (E2F dimerization partner 1)	TFDP1 DP1	Homo sapiens (Human)	410
+E2F4	Q16254	reviewed	E2F4_HUMAN	Transcription factor E2F4 (E2F-4)	E2F4	Homo sapiens (Human)	413
+E2F1	Q01094	reviewed	E2F1_HUMAN	Transcription factor E2F1 (E2F-1) (PBR3) (Retinoblastoma-associated protein 1) (RBAP-1) (Retinoblastoma-binding protein 3) (RBBP-3) (pRB-binding protein E2F-1)	E2F1 RBBP3	Homo sapiens (Human)	437
+E2F2	Q14209	reviewed	E2F2_HUMAN	Transcription factor E2F2 (E2F-2)	E2F2	Homo sapiens (Human)	437
+ETS2	P15036	reviewed	ETS2_HUMAN	Protein C-ets-2	ETS2	Homo sapiens (Human)	469
+ETS1	P14921	reviewed	ETS1_HUMAN	Protein C-ets-1 (p54)	ETS1 EWSR2	Homo sapiens (Human)	441
+GATAD2A	Q86YP4	reviewed	P66A_HUMAN	Transcriptional repressor p66-alpha (Hp66alpha) (GATA zinc finger domain-containing protein 2A)	GATAD2A	Homo sapiens (Human)	633
+GATA1	P15976	reviewed	GATA1_HUMAN	Erythroid transcription factor (Eryf1) (GATA-binding factor 1) (GATA-1) (GF-1) (NF-E1 DNA-binding protein)	GATA1 ERYF1 GF1	Homo sapiens (Human)	413
+GATA2	P23769	reviewed	GATA2_HUMAN	Endothelial transcription factor GATA-2 (GATA-binding protein 2)	GATA2	Homo sapiens (Human)	480
+GATA3	P23771	reviewed	GATA3_HUMAN	Trans-acting T-cell-specific transcription factor GATA-3 (GATA-binding factor 3)	GATA3	Homo sapiens (Human)	443
+SOX4	Q06945	reviewed	SOX4_HUMAN	Transcription factor SOX-4	SOX4	Homo sapiens (Human)	474
+SOX10	P56693	reviewed	SOX10_HUMAN	Transcription factor SOX-10	SOX10	Homo sapiens (Human)	466
+SOX6	P35712	reviewed	SOX6_HUMAN	Transcription factor SOX-6	SOX6	Homo sapiens (Human)	828
+SOX5	P35711	reviewed	SOX5_HUMAN	Transcription factor SOX-5	SOX5	Homo sapiens (Human)	763
+HOXC8	P31273	reviewed	HXC8_HUMAN	Homeobox protein Hox-C8 (Homeobox protein Hox-3A)	HOXC8 HOX3A	Homo sapiens (Human)	242
+HOXB7	P09629	reviewed	HXB7_HUMAN	Homeobox protein Hox-B7 (Homeobox protein HHO.C1) (Homeobox protein Hox-2C)	HOXB7 HOX2C	Homo sapiens (Human)	217
+DLX2	Q07687	reviewed	DLX2_HUMAN	Homeobox protein DLX-2	DLX2	Homo sapiens (Human)	328
+SHOX	O15266	reviewed	SHOX_HUMAN	Short stature homeobox protein (Pseudoautosomal homeobox-containing osteogenic protein) (Short stature homeobox-containing protein)	SHOX PHOG	Homo sapiens (Human)	292
+PBX1	P40424	reviewed	PBX1_HUMAN	Pre-B-cell leukemia transcription factor 1 (Homeobox protein PBX1) (Homeobox protein PRL)	PBX1 PRL	Homo sapiens (Human)	430
+HESX1	Q9UBX0	reviewed	HESX1_HUMAN	Homeobox expressed in ES cells 1 (Homeobox protein ANF) (hAnf)	HESX1 HANF	Homo sapiens (Human)	185
+POU2F2	P09086	reviewed	PO2F2_HUMAN	POU domain, class 2, transcription factor 2 (Lymphoid-restricted immunoglobulin octamer-binding protein NF-A2) (Octamer-binding protein 2) (Oct-2) (Octamer-binding transcription factor 2) (OTF-2)	POU2F2 OCT2 OTF2	Homo sapiens (Human)	479
+POU5F1	Q01860	reviewed	PO5F1_HUMAN	POU domain, class 5, transcription factor 1 (Octamer-binding protein 3) (Oct-3) (Octamer-binding protein 4) (Oct-4) (Octamer-binding transcription factor 3) (OTF-3)	POU5F1 OCT3 OCT4 OTF3	Homo sapiens (Human)	360
+ISL1	P61371	reviewed	ISL1_HUMAN	Insulin gene enhancer protein ISL-1 (Islet-1)	ISL1	Homo sapiens (Human)	349
+IRX4	P78413	reviewed	IRX4_HUMAN	Iroquois-class homeodomain protein IRX-4 (Homeodomain protein IRXA3) (Iroquois homeobox protein 4)	IRX4 IRXA3	Homo sapiens (Human)	519
+LMX1A	Q8TE12	reviewed	LMX1A_HUMAN	LIM homeobox transcription factor 1-alpha (LIM/homeobox protein 1.1) (LMX-1.1) (LIM/homeobox protein LMX1A)	LMX1A	Homo sapiens (Human)	382
+MSX1	P28360	reviewed	MSX1_HUMAN	Homeobox protein MSX-1 (Homeobox protein Hox-7) (Msh homeobox 1-like protein)	MSX1 HOX7	Homo sapiens (Human)	303
+POU1F1	P28069	reviewed	PIT1_HUMAN	Pituitary-specific positive transcription factor 1 (PIT-1) (Growth hormone factor 1) (GHF-1)	POU1F1 GHF1 PIT1	Homo sapiens (Human)	291
+HOXA5	P20719	reviewed	HXA5_HUMAN	Homeobox protein Hox-A5 (Homeobox protein Hox-1C)	HOXA5 HOX1C	Homo sapiens (Human)	270
+IRF1	P10914	reviewed	IRF1_HUMAN	Interferon regulatory factor 1 (IRF-1)	IRF1	Homo sapiens (Human)	325
+IRF9	Q00978	reviewed	IRF9_HUMAN	Interferon regulatory factor 9 (IRF-9) (IFN-alpha-responsive transcription factor subunit) (ISGF3 p48 subunit) (Interferon-stimulated gene factor 3 gamma) (ISGF-3 gamma) (Transcriptional regulator ISGF3 subunit gamma)	IRF9 ISGF3G	Homo sapiens (Human)	393
+MBD3	O95983	reviewed	MBD3_HUMAN	Methyl-CpG-binding domain protein 3 (Methyl-CpG-binding protein MBD3)	MBD3	Homo sapiens (Human)	291
+PIN1	Q13526	reviewed	PIN1_HUMAN	Peptidyl-prolyl cis-trans isomerase NIMA-interacting 1 (EC 5.2.1.8) (Peptidyl-prolyl cis-trans isomerase Pin1) (PPIase Pin1) (Rotamase Pin1)	PIN1	Homo sapiens (Human)	163
+MBD2	Q9UBB5	reviewed	MBD2_HUMAN	Methyl-CpG-binding domain protein 2 (Demethylase) (DMTase) (Methyl-CpG-binding protein MBD2)	MBD2	Homo sapiens (Human)	411
+ESR1	P03372	reviewed	ESR1_HUMAN	Estrogen receptor (ER) (ER-alpha) (Estradiol receptor) (Nuclear receptor subfamily 3 group A member 1)	ESR1 ESR NR3A1	Homo sapiens (Human)	595
+ESR2	Q92731	reviewed	ESR2_HUMAN	Estrogen receptor beta (ER-beta) (Nuclear receptor subfamily 3 group A member 2)	ESR2 ESTRB NR3A2	Homo sapiens (Human)	530
+HNF4A	P41235	reviewed	HNF4A_HUMAN	Hepatocyte nuclear factor 4-alpha (HNF-4-alpha) (Nuclear receptor subfamily 2 group A member 1) (Transcription factor 14) (TCF-14) (Transcription factor HNF-4)	HNF4A HNF4 NR2A1 TCF14	Homo sapiens (Human)	474
+NR2C1	P13056	reviewed	NR2C1_HUMAN	Nuclear receptor subfamily 2 group C member 1 (Orphan nuclear receptor TR2) (Testicular receptor 2)	NR2C1 TR2	Homo sapiens (Human)	603
+ESRRG	P62508	reviewed	ERR3_HUMAN	Estrogen-related receptor gamma (ERR gamma-2) (Estrogen receptor-related protein 3) (Nuclear receptor subfamily 3 group B member 3)	ESRRG ERR3 ERRG2 KIAA0832 NR3B3	Homo sapiens (Human)	458
+NR1H3	Q13133	reviewed	NR1H3_HUMAN	Oxysterols receptor LXR-alpha (Liver X receptor alpha) (Nuclear receptor subfamily 1 group H member 3)	NR1H3 LXRA	Homo sapiens (Human)	447
+VDR	P11473	reviewed	VDR_HUMAN	Vitamin D3 receptor (VDR) (1,25-dihydroxyvitamin D3 receptor) (Nuclear receptor subfamily 1 group I member 1)	VDR NR1I1	Homo sapiens (Human)	427
+NR1H4	Q96RI1	reviewed	NR1H4_HUMAN	Bile acid receptor (Farnesoid X-activated receptor) (Farnesol receptor HRR-1) (Nuclear receptor subfamily 1 group H member 4) (Retinoid X receptor-interacting protein 14) (RXR-interacting protein 14)	NR1H4 BAR FXR HRR1 RIP14	Homo sapiens (Human)	486
+RXRG	P48443	reviewed	RXRG_HUMAN	Retinoic acid receptor RXR-gamma (Nuclear receptor subfamily 2 group B member 3) (Retinoid X receptor gamma)	RXRG NR2B3	Homo sapiens (Human)	463
+RARG	P13631	reviewed	RARG_HUMAN	Retinoic acid receptor gamma (RAR-gamma) (Nuclear receptor subfamily 1 group B member 3)	RARG NR1B3	Homo sapiens (Human)	454
+RARB	P10826	reviewed	RARB_HUMAN	Retinoic acid receptor beta (RAR-beta) (HBV-activated protein) (Nuclear receptor subfamily 1 group B member 2) (RAR-epsilon)	RARB HAP NR1B2	Homo sapiens (Human)	455
+HNF4G	Q14541	reviewed	HNF4G_HUMAN	Hepatocyte nuclear factor 4-gamma (HNF-4-gamma) (Nuclear receptor subfamily 2 group A member 2)	HNF4G NR2A2	Homo sapiens (Human)	408
+PPARG	P37231	reviewed	PPARG_HUMAN	Peroxisome proliferator-activated receptor gamma (PPAR-gamma) (Nuclear receptor subfamily 1 group C member 3)	PPARG NR1C3	Homo sapiens (Human)	505
+THRA	P10827	reviewed	THA_HUMAN	Thyroid hormone receptor alpha (Nuclear receptor subfamily 1 group A member 1) (V-erbA-related protein 7) (EAR-7) (c-erbA-1) (c-erbA-alpha)	THRA EAR7 ERBA1 NR1A1 THRA1 THRA2	Homo sapiens (Human)	490
+RXRA	P19793	reviewed	RXRA_HUMAN	Retinoic acid receptor RXR-alpha (Nuclear receptor subfamily 2 group B member 1) (Retinoid X receptor alpha)	RXRA NR2B1	Homo sapiens (Human)	462
+ESRRA	P11474	reviewed	ERR1_HUMAN	Steroid hormone receptor ERR1 (Estrogen receptor-like 1) (Estrogen-related receptor alpha) (ERR-alpha) (Nuclear receptor subfamily 3 group B member 1)	ESRRA ERR1 ESRL1 NR3B1	Homo sapiens (Human)	423
+NR1H2	P55055	reviewed	NR1H2_HUMAN	Oxysterols receptor LXR-beta (Liver X receptor beta) (Nuclear receptor NER) (Nuclear receptor subfamily 1 group H member 2) (Ubiquitously-expressed nuclear receptor)	NR1H2 LXRB NER UNR	Homo sapiens (Human)	460
+RARA	P10276	reviewed	RARA_HUMAN	Retinoic acid receptor alpha (RAR-alpha) (Nuclear receptor subfamily 1 group B member 1)	RARA NR1B1	Homo sapiens (Human)	462
+NR3C1	P04150	reviewed	GCR_HUMAN	Glucocorticoid receptor (GR) (Nuclear receptor subfamily 3 group C member 1)	NR3C1 GRL	Homo sapiens (Human)	777
+PPARD	Q03181	reviewed	PPARD_HUMAN	Peroxisome proliferator-activated receptor delta (PPAR-delta) (NUCI) (Nuclear hormone receptor 1) (NUC1) (Nuclear receptor subfamily 1 group C member 2) (Peroxisome proliferator-activated receptor beta) (PPAR-beta)	PPARD NR1C2 PPARB	Homo sapiens (Human)	441
+NR2C2	P49116	reviewed	NR2C2_HUMAN	Nuclear receptor subfamily 2 group C member 2 (Orphan nuclear receptor TAK1) (Orphan nuclear receptor TR4) (Testicular receptor 4)	NR2C2 TAK1 TR4	Homo sapiens (Human)	596
+PPARA	Q07869	reviewed	PPARA_HUMAN	Peroxisome proliferator-activated receptor alpha (PPAR-alpha) (Nuclear receptor subfamily 1 group C member 1)	PPARA NR1C1 PPAR	Homo sapiens (Human)	468
+NR4A1	P22736	reviewed	NR4A1_HUMAN	Nuclear receptor subfamily 4 group A member 1 (Early response protein NAK1) (Nuclear hormone receptor NUR/77) (Nur77) (Orphan nuclear receptor HMR) (Orphan nuclear receptor TR3) (ST-59) (Testicular receptor 3)	NR4A1 GFRP1 HMR NAK1	Homo sapiens (Human)	598
+NR4A2	P43354	reviewed	NR4A2_HUMAN	Nuclear receptor subfamily 4 group A member 2 (Immediate-early response protein NOT) (Orphan nuclear receptor NURR1) (Transcriptionally-inducible nuclear receptor)	NR4A2 NOT NURR1 TINUR	Homo sapiens (Human)	598
+NR1D2	Q14995	reviewed	NR1D2_HUMAN	Nuclear receptor subfamily 1 group D member 2 (Orphan nuclear hormone receptor BD73) (Rev-erb alpha-related receptor) (RVR) (Rev-erb-beta) (V-erbA-related protein 1-related) (EAR-1R)	NR1D2	Homo sapiens (Human)	579
+NR2F2	P24468	reviewed	COT2_HUMAN	COUP transcription factor 2 (COUP-TF2) (Apolipoprotein A-I regulatory protein 1) (ARP-1) (COUP transcription factor II) (COUP-TF II) (Nuclear receptor subfamily 2 group F member 2)	NR2F2 ARP1 TFCOUP2	Homo sapiens (Human)	414
+NR1I2	O75469	reviewed	NR1I2_HUMAN	Nuclear receptor subfamily 1 group I member 2 (Orphan nuclear receptor PAR1) (Orphan nuclear receptor PXR) (Pregnane X receptor) (Steroid and xenobiotic receptor) (SXR)	NR1I2 PXR	Homo sapiens (Human)	434
+NR2F1	P10589	reviewed	COT1_HUMAN	COUP transcription factor 1 (COUP-TF1) (COUP transcription factor I) (COUP-TF I) (Nuclear receptor subfamily 2 group F member 1) (V-erbA-related protein 3) (EAR-3)	NR2F1 EAR3 ERBAL3 TFCOUP1	Homo sapiens (Human)	423
+NR1I3	Q14994	reviewed	NR1I3_HUMAN	Nuclear receptor subfamily 1 group I member 3 (Constitutive activator of retinoid response) (Constitutive active response) (Constitutive androstane receptor) (CAR) (Orphan nuclear receptor MB67)	NR1I3 CAR	Homo sapiens (Human)	352
+RORC	P51449	reviewed	RORG_HUMAN	Nuclear receptor ROR-gamma (Nuclear receptor RZR-gamma) (Nuclear receptor subfamily 1 group F member 3) (RAR-related orphan receptor C) (Retinoid-related orphan receptor-gamma)	RORC NR1F3 RORG RZRG	Homo sapiens (Human)	518
+THRB	P10828	reviewed	THB_HUMAN	Thyroid hormone receptor beta (Nuclear receptor subfamily 1 group A member 2) (c-erbA-2) (c-erbA-beta)	THRB ERBA2 NR1A2 THR1	Homo sapiens (Human)	461
+NR0B1	P51843	reviewed	NR0B1_HUMAN	Nuclear receptor subfamily 0 group B member 1 (DSS-AHC critical region on the X chromosome protein 1) (Nuclear receptor DAX-1)	NR0B1 AHC DAX1	Homo sapiens (Human)	470
+SAFB	Q15424	reviewed	SAFB1_HUMAN	Scaffold attachment factor B1 (SAF-B) (SAF-B1) (HSP27 estrogen response element-TATA box-binding protein) (HSP27 ERE-TATA-binding protein)	SAFB HAP HET SAFB1	Homo sapiens (Human)	915
+DR1	Q01658	reviewed	NC2B_HUMAN	Protein Dr1 (Down-regulator of transcription 1) (Negative cofactor 2-beta) (NC2-beta) (TATA-binding protein-associated phosphoprotein)	DR1	Homo sapiens (Human)	176
+DACH1	Q9UI36	reviewed	DACH1_HUMAN	Dachshund homolog 1 (Dach1)	DACH1 DACH	Homo sapiens (Human)	758
+RBPJ	Q06330	reviewed	SUH_HUMAN	Recombining binding protein suppressor of hairless (CBF-1) (J kappa-recombination signal-binding protein) (RBP-J kappa) (RBP-J) (RBP-JK) (Renal carcinoma antigen NY-REN-30)	RBPJ IGKJRB IGKJRB1 RBPJK RBPSUH	Homo sapiens (Human)	500
+TBP	P20226	reviewed	TBP_HUMAN	TATA-box-binding protein (TATA sequence-binding protein) (TATA-binding factor) (TATA-box factor) (Transcription initiation factor TFIID TBP subunit)	TBP GTF2D1 TF2D TFIID	Homo sapiens (Human)	339
+NFYB	P25208	reviewed	NFYB_HUMAN	Nuclear transcription factor Y subunit beta (CAAT box DNA-binding protein subunit B) (Nuclear transcription factor Y subunit B) (NF-YB)	NFYB HAP3	Homo sapiens (Human)	207
+FOXP3	Q9BZS1	reviewed	FOXP3_HUMAN	Forkhead box protein P3 (Scurfin) [Cleaved into: Forkhead box protein P3, C-terminally processed; Forkhead box protein P3 41 kDa form]	FOXP3 IPEX JM2	Homo sapiens (Human)	431
+HSF2	Q03933	reviewed	HSF2_HUMAN	Heat shock factor protein 2 (HSF 2) (Heat shock transcription factor 2) (HSTF 2)	HSF2 HSTF2	Homo sapiens (Human)	536
+ARID5A	Q03989	reviewed	ARI5A_HUMAN	AT-rich interactive domain-containing protein 5A (ARID domain-containing protein 5A) (Modulator recognition factor 1) (MRF-1)	ARID5A MRF1	Homo sapiens (Human)	594
+GTF2B	Q00403	reviewed	TF2B_HUMAN	Transcription initiation factor IIB (EC 2.3.1.48) (General transcription factor TFIIB) (S300-II)	GTF2B TF2B TFIIB	Homo sapiens (Human)	316
+NFYA	P23511	reviewed	NFYA_HUMAN	Nuclear transcription factor Y subunit alpha (CAAT box DNA-binding protein subunit A) (Nuclear transcription factor Y subunit A) (NF-YA)	NFYA	Homo sapiens (Human)	347
+CENPS	Q8N2Z9	reviewed	CENPS_HUMAN	Centromere protein S (CENP-S) (Apoptosis-inducing TAF9-like domain-containing protein 1) (FANCM-associated histone fold protein 1) (FANCM-interacting histone fold protein 1) (Fanconi anemia-associated polypeptide of 16 kDa)	CENPS APITD1 FAAP16 MHF1	Homo sapiens (Human)	138
+SAFB2	Q14151	reviewed	SAFB2_HUMAN	Scaffold attachment factor B2 (SAF-B2)	SAFB2 KIAA0138	Homo sapiens (Human)	953
+SKI	P12755	reviewed	SKI_HUMAN	Ski oncogene (Proto-oncogene c-Ski)	SKI	Homo sapiens (Human)	728
+PLSCR1	O15162	reviewed	PLS1_HUMAN	Phospholipid scramblase 1 (PL scramblase 1) (Ca(2+)-dependent phospholipid scramblase 1) (Erythrocyte phospholipid scramblase) (Mg(2+)-dependent nuclease) (EC 3.1.-.-) (MmTRA1b)	PLSCR1	Homo sapiens (Human)	318
+SMYD3	Q9H7B4	reviewed	SMYD3_HUMAN	Histone-lysine N-methyltransferase SMYD3 (EC 2.1.1.354) (SET and MYND domain-containing protein 3) (Zinc finger MYND domain-containing protein 1)	SMYD3 ZMYND1 ZNFN3A1	Homo sapiens (Human)	428
+NFYC	Q13952	reviewed	NFYC_HUMAN	Nuclear transcription factor Y subunit gamma (CAAT box DNA-binding protein subunit C) (Nuclear transcription factor Y subunit C) (NF-YC) (Transactivator HSM-1/2)	NFYC	Homo sapiens (Human)	458
+TEAD4	Q15561	reviewed	TEAD4_HUMAN	Transcriptional enhancer factor TEF-3 (TEA domain family member 4) (TEAD-4) (Transcription factor 13-like 1) (Transcription factor RTEF-1)	TEAD4 RTEF1 TCF13L1 TEF3	Homo sapiens (Human)	434
+HMGA1	P17096	reviewed	HMGA1_HUMAN	High mobility group protein HMG-I/HMG-Y (HMG-I(Y)) (High mobility group AT-hook protein 1) (High mobility group protein A1) (High mobility group protein R)	HMGA1 HMGIY	Homo sapiens (Human)	107
+LCOR	Q96JN0	reviewed	LCOR_HUMAN	Ligand-dependent corepressor (LCoR) (Mblk1-related protein 2)	LCOR C10orf12 KIAA1795 MLR2	Homo sapiens (Human)	433
+PCGF2	P35227	reviewed	PCGF2_HUMAN	Polycomb group RING finger protein 2 (DNA-binding protein Mel-18) (RING finger protein 110) (Zinc finger protein 144)	PCGF2 MEL18 RNF110 ZNF144	Homo sapiens (Human)	344
+THAP7	Q9BT49	reviewed	THAP7_HUMAN	THAP domain-containing protein 7	THAP7	Homo sapiens (Human)	309
+SRF	P11831	reviewed	SRF_HUMAN	Serum response factor (SRF)	SRF	Homo sapiens (Human)	508
+MTERF4	Q7Z6M4	reviewed	MTEF4_HUMAN	Transcription termination factor 4, mitochondrial (Mitochondrial transcription termination factor 4) (mTERF domain-containing protein 2) [Cleaved into: mTERF domain-containing protein 2 processed]	MTERF4 MTERFD2 HSPC096	Homo sapiens (Human)	381
+CENPX	A8MT69	reviewed	CENPX_HUMAN	Centromere protein X (CENP-X) (FANCM-associated histone fold protein 2) (FANCM-interacting histone fold protein 2) (Fanconi anemia-associated polypeptide of 10 kDa) (Retinoic acid-inducible gene D9 protein homolog) (Stimulated by retinoic acid gene 13 protein homolog)	CENPX FAAP10 MHF2 STRA13	Homo sapiens (Human)	81
+TFAP2A	P05549	reviewed	AP2A_HUMAN	Transcription factor AP-2-alpha (AP2-alpha) (AP-2 transcription factor) (Activating enhancer-binding protein 2-alpha) (Activator protein 2) (AP-2)	TFAP2A AP2TF TFAP2	Homo sapiens (Human)	437
+PHF1	O43189	reviewed	PHF1_HUMAN	PHD finger protein 1 (Protein PHF1) (hPHF1) (Polycomb-like protein 1) (hPCl1)	PHF1 PCL1	Homo sapiens (Human)	567
+TP53	P04637	reviewed	P53_HUMAN	Cellular tumor antigen p53 (Antigen NY-CO-13) (Phosphoprotein p53) (Tumor suppressor p53)	TP53 P53	Homo sapiens (Human)	393
+TP63	Q9H3D4	reviewed	P63_HUMAN	Tumor protein 63 (p63) (Chronic ulcerative stomatitis protein) (CUSP) (Keratinocyte transcription factor KET) (Transformation-related protein 63) (TP63) (Tumor protein p73-like) (p73L) (p40) (p51)	TP63 KET P63 P73H P73L TP73L	Homo sapiens (Human)	680
+RELA	Q04206	reviewed	TF65_HUMAN	Transcription factor p65 (Nuclear factor NF-kappa-B p65 subunit) (Nuclear factor of kappa light polypeptide gene enhancer in B-cells 3)	RELA NFKB3	Homo sapiens (Human)	551
+REL	Q04864	reviewed	REL_HUMAN	Proto-oncogene c-Rel	REL	Homo sapiens (Human)	619
+NFKB1	P19838	reviewed	NFKB1_HUMAN	Nuclear factor NF-kappa-B p105 subunit (DNA-binding factor KBF1) (EBP-1) (Nuclear factor of kappa light polypeptide gene enhancer in B-cells 1) [Cleaved into: Nuclear factor NF-kappa-B p50 subunit]	NFKB1	Homo sapiens (Human)	968
+RELB	Q01201	reviewed	RELB_HUMAN	Transcription factor RelB (I-Rel)	RELB	Homo sapiens (Human)	579
+SMAD5	Q99717	reviewed	SMAD5_HUMAN	Mothers against decapentaplegic homolog 5 (MAD homolog 5) (Mothers against DPP homolog 5) (JV5-1) (SMAD family member 5) (SMAD 5) (Smad5) (hSmad5)	SMAD5 MADH5	Homo sapiens (Human)	465
+SMAD1	Q15797	reviewed	SMAD1_HUMAN	Mothers against decapentaplegic homolog 1 (MAD homolog 1) (Mothers against DPP homolog 1) (JV4-1) (Mad-related protein 1) (SMAD family member 1) (SMAD 1) (Smad1) (hSMAD1) (Transforming growth factor-beta-signaling protein 1) (BSP-1)	SMAD1 BSP1 MADH1 MADR1	Homo sapiens (Human)	465
+SMAD3	P84022	reviewed	SMAD3_HUMAN	Mothers against decapentaplegic homolog 3 (MAD homolog 3) (Mad3) (Mothers against DPP homolog 3) (hMAD-3) (JV15-2) (SMAD family member 3) (SMAD 3) (Smad3) (hSMAD3)	SMAD3 MADH3	Homo sapiens (Human)	425
+SMAD4	Q13485	reviewed	SMAD4_HUMAN	Mothers against decapentaplegic homolog 4 (MAD homolog 4) (Mothers against DPP homolog 4) (Deletion target in pancreatic carcinoma 4) (SMAD family member 4) (SMAD 4) (Smad4) (hSMAD4)	SMAD4 DPC4 MADH4	Homo sapiens (Human)	552
+STAT5A	P42229	reviewed	STA5A_HUMAN	Signal transducer and activator of transcription 5A	STAT5A STAT5	Homo sapiens (Human)	794
+STAT1	P42224	reviewed	STAT1_HUMAN	Signal transducer and activator of transcription 1-alpha/beta (Transcription factor ISGF-3 components p91/p84)	STAT1	Homo sapiens (Human)	750

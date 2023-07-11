@@ -1,0 +1,178 @@
+---
+title: "Jaccard Analysis"
+author: "Luis Soto"
+date: "2023-07-03"
+output: html_document
+---
+
+```{r}
+library(seqinr)
+library(dplyr)
+library(stringr)
+library(readr)
+library(readxl)
+library(writexl)
+library(Biostrings)
+library(ggplot2)
+fasta.file <- read.fasta(file = "proteins.fasta")
+fasta.file = lapply(fasta.file, paste0, collapse='')
+fasta.df = data.frame(ID = names(fasta.file),
+                      sequence = fasta.file %>%unlist())
+fasta.df$ID = str_split_fixed(fasta.df$ID, '\\|', 3)[,3]
+uniprot.file <- read_tsv('uniprot.tsv')
+fasta.df$gene = uniprot.file$From[match(fasta.df$ID, uniprot.file$`Entry Name`)]
+table.file <- read_xlsx('Array TF families.xlsx')
+table.file$Sequence = fasta.df$sequence[match(table.file$TF, fasta.df$gene)]
+
+
+families = table.file$family %>% unique()
+
+tf1s = c()
+tf2s = c()
+scores = c()
+longitudes = c()
+for(Family in families){
+  tmp.data = table.file %>% filter(family == Family)
+  for(i in 1:nrow(tmp.data)){
+    tf1 = tmp.data[i, 'TF'] %>% unlist()
+    seq1 = tmp.data[i, 'Sequence'] %>% unlist()
+    for(j in 1:nrow(tmp.data)){
+      tf2 = tmp.data[j, 'TF'] %>% unlist()
+      seq2 = tmp.data[j, 'Sequence'] %>% unlist()
+      
+      if(TRUE){
+        score = 0
+        aligned = pairwiseAlignment(pattern=AAString(toupper(seq1)), subject=AAString(toupper(seq2)), substitutionMatrix = "BLOSUM62")
+        pattern = aligned@pattern %>% as.character()
+        pattern = str_split(pattern, '')[[1]]
+        
+        subject = aligned@subject %>% as.character()
+        subject = str_split(subject, '')[[1]]
+        
+        for(x in 1:length(pattern)){
+          if(pattern[x] == subject[x] & pattern[x] != '-'){score = score +1}
+        }
+        tf1s = c(tf1s, tf1)
+        tf2s = c(tf2s, tf2)
+        scores = c(scores, score)
+        longitudes = c(longitudes, length(pattern))
+        
+      }
+      
+      
+      
+    }
+  }
+}
+
+
+aligned.df =  data.frame(TF1 = tf1s, TF2 = tf2s, Score = scores, Length = longitudes)
+aligned.df$Family = table.file$family[match(aligned.df$TF1, table.file$TF)]
+aligned.df$Prop = aligned.df$Score/aligned.df$Length
+aligned.df = aligned.df %>% arrange(Family)
+write_xlsx(aligned.df, path = 'Alignment_info.xlsx')
+
+```
+
+```{r}
+head(aligned.df)
+```
+
+```{r}
+
+get_jaccard = function(vector1, vector2){
+  vector.intersection = length(intersect(vector1, vector2))
+  vector.union = length(union(vector1, vector2))
+  return(vector.intersection/vector.union)
+}
+
+df = read_xlsx('297 pairs coop+ant events.xlsx', sheet = 2)
+
+colnames(df) = c('TF1', 'TF2', 'pair', 'coop', 'ant')
+
+df2 = read_xlsx('Alignment_info.xlsx')
+
+scores = c()
+partners1 = c()
+partners2 = c()
+for(i in 1:nrow(df2)){
+  tf1 = df2[i, 'TF1'] %>% unlist()
+  tf2 = df2[i, 'TF2'] %>% unlist()
+
+  info1 = df %>% filter(TF1 == tf1 | TF2 == tf1 ) %>% mutate(new_TF1.a = ifelse(TF1 == tf1, tf1, TF2),
+                                                             new_TF2.a = ifelse(TF2 != tf1, TF2, TF1),
+                                                             TF2x = ifelse(coop == 0 & ant == 0, paste0(new_TF2.a, '.nointeraction', sep =''),
+                                                                           ifelse(coop !=0, paste0(new_TF2.a, '.coop', sep =''), paste0(new_TF2.a, '.ant', sep =''))))
+  info2 = df %>% filter(TF1 == tf2 | TF2 == tf2 ) %>% mutate(new_TF1.b = ifelse(TF1 == tf2, tf2, TF2),
+                                                             new_TF2.b = ifelse(TF2 != tf2, TF2, TF1),
+                                                             TF2y = ifelse(coop == 0 & ant == 0, paste0(new_TF2.b, '.nointeraction', sep =''),
+                                                                           ifelse(coop !=0, paste0(new_TF2.b, '.coop', sep =''), paste0(new_TF2.b, '.ant', sep =''))))
+  tf.incommon = intersect(info1$new_TF2.a, info2$new_TF2.b)
+  info1 = info1 %>% filter(new_TF2.a %in% tf.incommon) %>% arrange(TF2x)
+  info2 = info2 %>% filter(new_TF2.b %in% tf.incommon) %>% arrange(TF2y)
+  info3 = cbind(info1[,6:8],info2[,6:8])
+  info3 = info3 %>% filter( ! (str_detect(TF2x, 'nointeraction') & str_detect(TF2y, 'nointeraction')) )
+  if(nrow(info3) == 0){
+    score = NA
+    nodes.tf1 = NA
+    nodes.tf2 = NA
+  } else{
+    nodes.tf1 = info3$TF2x
+    nodes.tf1.x = nodes.tf1[str_detect(nodes.tf1, 'nointeraction',negate = TRUE)]
+    nodes.tf2 = info3$TF2y
+    
+    nodes.tf2.x = nodes.tf2[str_detect(nodes.tf2, 'nointeraction',negate = TRUE)]
+    score = get_jaccard(nodes.tf1.x, nodes.tf2.x)
+  }
+  
+  partners1 = c(partners1, paste0(nodes.tf1, collapse= ',' ))
+  partners2 = c(partners2, paste0(nodes.tf2, collapse= ',' ))
+  scores = c(scores, score)
+}
+
+df2$score = scores
+df2$partners.TF1 = partners1
+df2$partners.TF2 = partners2
+
+table.file <- read_xlsx('D:/Descargas/Array TF families.xlsx')
+df2$Family1 = table.file$family[match(df2$TF1, table.file$TF)]
+df2$Family2 = table.file$family[match(df2$TF2, table.file$TF)]
+
+
+df2 = df2 %>% group_by(TF1, TF2) %>% mutate(TF1X = min(TF1, TF2),
+                                            TF2X = max(TF1, TF2),
+                                            partners1 = ifelse(TF1X == TF1, partners.TF1, partners.TF2),
+                                            partners2 = ifelse(TF2X == TF2, partners.TF2, partners.TF1))
+
+df2 = df2 %>% filter(TF1X != TF2X)
+df2$TF1 = df2$TF1X
+df2$TF2 = df2$TF2X
+df2 = df2 %>% dplyr::select(TF1, TF2, Score, Length, Family, Prop, score, partners1, partners2)
+df2 = unique(df2)
+
+colnames(df2) = c('TF1', 'TF2', 'Identical aminoacids', 'Total length Alignment', 'TF Family', 'Proportion Identity', 'Jaccard Score', 'Partners.TF1', 'Partners.TF2')
+
+write_xlsx(df2, 'Paralog_analysis_output.xlsx')
+
+
+```
+
+
+
+```{r}
+head(df2)
+```
+
+```{r}
+library(ggpubr)
+df2 %>% mutate(groups = ifelse(`Proportion Identity` < 0.30, '< 30%', 
+                               ifelse(`Proportion Identity` <=0.50, '30-50%', '> 50%'))) %>% 
+  mutate(groups = factor(groups, levels = c('< 30%', '30-50%', '> 50%'))) %>% 
+  ggplot(aes(x = groups, y = `Jaccard Score`)) +
+  geom_violin() +
+  theme_bw() + 
+  stat_compare_means(comparisons = list(c('< 30%', '> 50%'), c('30-50%', '> 50%')), method = 't.test')
+
+```
+
+
