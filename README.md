@@ -58,21 +58,33 @@ Supplementary Figure 6C, 6D, 6E
 1. Final events list 6Feb23.xlsx: 437 TF-TF pairs experimentally identified with PY1H (180 cooperative, 257 antagonism)
 2. all_tfs_chipseq.txt: Table with TF name and Uniprot ID.
 3. ChIP-seq.metadata.txt: Metadata file from GTRD database.
-4. MACS2_Peaks_TFs_final_16_feb.xlsx:
+4. MACS2_Peaks_TFs_final_16_feb.xlsx: Peaks information for TF in pY1H
 ### Scripts
 CHIP_Randomization_antagonism.Rmd: Script to perform randomization and reproduce Figure 2G; and Supplementary Figure 6F, G
 ### Output Files
 Figure 2G; Supplementary Figure 6F, 6G
 
 ## Network Randomization Analysis (EY1H and PY1H with ChIP data)
+### Input files
+1. py1h ey1h chip-seq overlap list for Luis.xlsx: 270 TF-promoter from eY1H and 256 TF-promoter from pY1H
+2. all_tfs_chipseq.txt: Table with TF name and Uniprot ID.
+3. MACS2_Peaks_TFs_final_26_june.xlsx:  Peaks information for TF in eY1H
+4. MACS2_Peaks_TFs_final_16_feb.xlsx: Peaks information for TF in pY1H
 ### Scripts
 Reviewers_randomization.Rmd
+### Output Files
+Figure X.
 
 ## Paralog partner similarity
 
 ### Input files
-
+1. proteins.fasta: Protein sequences for TFs with Uniprot ID obtained from UNIPROT
+2. uniprot.tsv: Metadata table from Uniprot
+3. Array TF families.xlsx: TFs from pY1H and TF Family
+4. 297 pairs coop+ant events.xlsx:
 ### Scripts
 1.Jaccard_Analysis.Rmd
 ### Output Files
-Figure 3D
+1. Paralog_analysis_output.xlsx: Jaccard score and alignment score for each pair of TF
+2. Figure 3D
+  
